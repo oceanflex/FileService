@@ -52,7 +52,7 @@ public class TextFileReader {
     
     public static void main(String[] args) {
         GarageTotalsFormat fmt = new GarageTotalsFormat();
-        TextFileReader read = new TextFileReader(fmt,"");
+        TextFileReader read = new TextFileReader(fmt,"C:\\Users\\Zachary\\Documents\\NetBeansProjects\\FileService\\src\\format\\GarTotSample.txt");
         Map<String, Object>[] temp = read.readFile();
         System.out.println(fmt.encode(temp));
     }
