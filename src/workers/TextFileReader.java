@@ -5,6 +5,7 @@ import format.GarageTotalsFormat;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.Map;
 
 /**
@@ -30,7 +31,7 @@ public class TextFileReader {
         this.filePath = filePath;
     }
     
-    public Map<String, Object>[] readFile(){
+    public Map<String, Object>[] readFile() throws IOException{
         File data = new File(filePath);
         BufferedReader in;
         StringBuilder sb = new StringBuilder("");
@@ -43,14 +44,14 @@ public class TextFileReader {
                 line = in.readLine();
                 sb.append(line);
             }
-        }catch(Exception e){
-            
+        }catch(IOException ie){
+            throw ie;
         }
         Map<String, Object>[] back = fmt.decode(sb.toString());
         return back;
     }
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         GarageTotalsFormat fmt = new GarageTotalsFormat();
         TextFileReader read = new TextFileReader(fmt,"C:\\Users\\Zachary\\Documents\\NetBeansProjects\\FileService\\src\\format\\GarTotSample.txt");
         Map<String, Object>[] temp = read.readFile();
