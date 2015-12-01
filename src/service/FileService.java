@@ -1,9 +1,12 @@
 package service;
 
 import format.Formatter;
+import format.GarageTotalsFormat;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import workers.TextFileReader;
 import workers.TextFileWriter;
 
@@ -44,6 +47,29 @@ public class FileService {
     
     public Map<String, Object>[] readFile() throws IOException{
         return reader.readFile();
+    }
+    
+    public static void main(String[] args) {
+        Formatter fmt = new GarageTotalsFormat();
+        String path = "C:\\Users\\Zachary\\Documents\\NetBeansProjects\\FileService\\src\\format\\GarTotSample.txt";
+        FileService fs = new FileService(fmt,path);
+        Map<String, Object>[] temp = null;
+        try {
+            temp = fs.readFile();
+        } catch (IOException ex) {
+            Logger.getLogger(FileService.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        path = "C:\\Users\\Zachary\\Documents\\NetBeansProjects\\FileService\\src\\format\\writerText.txt";
+        fs.setFilePath(path);
+        try {
+            fs.writeFile(temp);
+            temp = fs.readFile();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(FileService.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(FileService.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        System.out.println(fmt.encode(temp));
     }
     
 }
