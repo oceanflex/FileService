@@ -55,14 +55,14 @@ public class GarageTotalsFormat implements Formatter{
         return sb.toString();
     }
     
-    public static void main(String[] args) {
-        Formatter fmt = new GarageTotalsFormat();
-        Map<String, Object>[] temp = fmt.decode("Hours Parked: 21.25\n" +
-            "Dollars Collected: $63.55\n" +
-            "Vehicles in lot: 3\n" +
-            "Vehicles that exited: 7\n" +
-            "");
-        System.out.println(fmt.encode(temp));
-    }
+//    public static void main(String[] args) {
+//        Formatter fmt = new GarageTotalsFormat();
+//        Map<String, Object>[] temp = fmt.decode("Hours Parked: 21.25\n" +
+//            "Dollars Collected: $63.55\n" +
+//            "Vehicles in lot: 3\n" +
+//            "Vehicles that exited: 7\n" +
+//            "");
+//        System.out.println(fmt.encode(temp));
+//    }
     
 }

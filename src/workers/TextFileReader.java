@@ -1,7 +1,7 @@
 package workers;
 
 import format.Formatter;
-import format.GarageTotalsFormat;
+//import format.GarageTotalsFormat;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -51,11 +51,11 @@ public class TextFileReader {
         return back;
     }
     
-    public static void main(String[] args) throws IOException {
-        GarageTotalsFormat fmt = new GarageTotalsFormat();
-        TextFileReader read = new TextFileReader(fmt,"C:\\Users\\Zachary\\Documents\\NetBeansProjects\\FileService\\src\\format\\GarTotSample.txt");
-        Map<String, Object>[] temp = read.readFile();
-        System.out.println(fmt.encode(temp));
-    }
+//    public static void main(String[] args) throws IOException {
+//        GarageTotalsFormat fmt = new GarageTotalsFormat();
+//        TextFileReader read = new TextFileReader(fmt,"C:\\Users\\Zachary\\Documents\\NetBeansProjects\\FileService\\src\\format\\GarTotSample.txt");
+//        Map<String, Object>[] temp = read.readFile();
+//        System.out.println(fmt.encode(temp));
+//    }
     
 }
