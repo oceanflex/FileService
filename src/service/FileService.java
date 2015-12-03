@@ -51,7 +51,7 @@ public class FileService {
     
     public static void main(String[] args) {
         Formatter fmt = new GarageTotalsFormat();
-        String path = "C:\\Users\\Zachary\\Documents\\NetBeansProjects\\FileService\\src\\format\\GarTotSample.txt";
+        String path = "U:\\zsummers\\Documents\\NetBeansProjects\\TextFileService\\src\\format\\GarTotSample.txt";
         FileService fs = new FileService(fmt,path);
         Map<String, Object>[] temp = null;
         try {
@@ -59,7 +59,7 @@ public class FileService {
         } catch (IOException ex) {
             Logger.getLogger(FileService.class.getName()).log(Level.SEVERE, null, ex);
         }
-        path = "C:\\Users\\Zachary\\Documents\\NetBeansProjects\\FileService\\src\\format\\writerText.txt";
+        path = "U:\\zsummers\\Documents\\NetBeansProjects\\TextFileService\\src\\format\\writerText.txt";
         fs.setFilePath(path);
         try {
             fs.writeFile(temp);
