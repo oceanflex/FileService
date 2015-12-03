@@ -30,7 +30,7 @@ public class TextFileWriter {
     
     public void writeFile(Map<String, Object>[] toWrite) throws FileNotFoundException{
         try (PrintWriter writer = new PrintWriter(filePath)) {
-            writer.println(fmt.encode(toWrite));
+            writer.print(fmt.encode(toWrite));
         }
         
     }
